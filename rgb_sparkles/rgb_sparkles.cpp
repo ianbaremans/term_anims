@@ -2,11 +2,13 @@
 #include <random>
 #include <string>
 #include <stdio.h>
+#include <unistd.h>
 
 void anim () {
     std::random_device r;
     char buffer [1000];
     int clrbuff;
+    system("clear");
 
     for (int i = 0; i < 5; ++i) {
         for (int i = 0; i < 60; ++i) {
@@ -29,9 +31,14 @@ void anim () {
         }
         std::cout << "\n";
     }
+    //std::cout << "\033c" << std::flush; 
 }
 
 int main () {
-    anim ();
+    int i = 1;
+    while (i = 1) {
+       anim();
+       usleep(10000);
+    }
 }
 
