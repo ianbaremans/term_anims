@@ -2,9 +2,8 @@
 #include <random>
 #include <string>
 #include <stdio.h>
-#define overwrite "\r"
 
-int main () {
+void anim () {
     std::random_device r;
     char buffer [1000];
     int clrbuff;
@@ -30,5 +29,9 @@ int main () {
         }
         std::cout << "\n";
     }
+}
+
+int main () {
+    anim ();
 }
 
