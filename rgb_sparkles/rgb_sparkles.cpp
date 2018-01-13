@@ -2,6 +2,7 @@
 #include <random>
 #include <string>
 #include <stdio.h>
+#define overwrite "\r"
 
 int main () {
     std::random_device r;
@@ -19,10 +20,10 @@ int main () {
             int bgg = uniform_dist(e1);
             int bgb = uniform_dist(e1);
 
-            clrbuff = snprintf(buffer, 1000, "\033[48;2;%d;%d;%d;38;2;%d;%d;%dm",
+            clrbuff = snprintf(buffer, 1000,
+                    "\033[48;2;%d;%d;%d;38;2;%d;%d;%dm",
                     bgr, bgg, bgb, fgr, fgg, fgb);
 
-            //const std::string color("\033[48;2;0;0;0;38;2;${fgr};${fgg};${fgb}m");
             const std::string color(buffer);
             const std::string reset("\033[0m");
             std::cout << color << "\u2584" << reset;
