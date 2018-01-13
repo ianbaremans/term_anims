@@ -31,7 +31,6 @@ void anim () {
         }
         std::cout << "\n";
     }
-    //std::cout << "\033c" << std::flush; 
 }
 
 int main () {
