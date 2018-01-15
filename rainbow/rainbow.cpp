@@ -31,14 +31,14 @@ std::tuple<int, int, int> rgb_id(int id) {
     if (id == 24) return std::make_tuple(255, 0, 64);
 }
 
-void rainbow () {
+void rainbow (int temp_stage) {
     char buffer [1000];
     int clrbuff;
     system("clear");
 
     for (int i = 0; i < 5; ++i) {
         for (int i = 0; i < 60; ++i) {
-            int id_temp = i % 25;
+            int id_temp = (temp_stage + i) % 25;
             int bgr = std::get<0>(rgb_id(id_temp));
             int bgg = std::get<1>(rgb_id(id_temp));
             int bgb = std::get<2>(rgb_id(id_temp));
@@ -61,9 +61,16 @@ void rainbow () {
 
 int main () {
     int i = 1;
+    int stage = 1;
+
     while (i = 1) {
-        rainbow();
-        usleep(10000);
+        rainbow(stage);
+        usleep(11000);
+        if (stage < 24) {
+            stage = stage + 1;
+        } else {
+            stage = 1;
+        }
     }
 }
 
